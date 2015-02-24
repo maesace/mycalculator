@@ -39,11 +39,16 @@ public class MyCalculator {
 	// n! of an integer
 	public int nfactorial(int n){
 		int factorial = 1;
-		
-		for(int i=1;i<n;i++)
+		int neg=0;
+		if(n*(-1)>0){// change: add condition for negative factorials
+			neg=1;
+			n*=-1;
+		}
+		for(int i=1;i<=n;i++)// change: i<n to i<=n
 			factorial *= i;
 		
-		return factorial;
+		if(neg==0) return factorial;// change: add condition for negative factorial
+		else return factorial*-1;
 	}
 	
 	// binary search in an array
